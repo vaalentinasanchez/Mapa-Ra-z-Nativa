@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es_CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground Tailwind CSS - Inicio</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-xl font-bold">TW</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800">Tailwind CSS Playground</h1>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                        🤖 Powered by AI
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="text-center max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full mb-6">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span class="font-semibold">Aprende diseño web moderno</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Domina Tailwind CSS con
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                    Tutoriales Interactivos
+                </span>
+            </h2>
+            
+            <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                Aprende a crear diseños web modernos, responsivos y profesionales usando Tailwind CSS.
+                Experimenta en tiempo real y ve los resultados al instante.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#guias" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                    Comenzar a Aprender
+                </a>
+                <a href="https://tailwindcss.com/docs" target="_blank" class="px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 border-2 border-gray-200">
+                    Documentación Oficial
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Aprende Rápido</h3>
+                <p class="text-gray-600">
+                    Tutoriales paso a paso con ejemplos visuales que te enseñan los conceptos de forma práctica.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Interactivo</h3>
+                <p class="text-gray-600">
+                    Experimenta con el código en vivo y ve los cambios instantáneamente en tu navegador.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Guías Completas</h3>
+                <p class="text-gray-600">
+                    Desde conceptos básicos hasta técnicas avanzadas, todo explicado de forma clara.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Guías Section -->
+    <section id="guias" class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Guías de Aprendizaje
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Selecciona una guía para comenzar tu viaje de aprendizaje en diseño web con Tailwind CSS
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <!-- Guía 1: Responsive -->
+            <a href="responsive.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Diseño Responsive</h3>
+                    <p class="text-blue-100">Nivel: Principiante</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">
+                        Aprende a crear diseños que se adaptan perfectamente a cualquier dispositivo: móvil, tablet y desktop.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Breakpoints de Tailwind</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Mobile-first approach</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Ejemplos prácticos</span>
+                        </li>
+                    </ul>
+                    <div class="flex items-center justify-between text-blue-600 font-semibold">
+                        <span>Comenzar guía</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Guía 2: Flexbox -->
+            <a href="flex.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 p-8 text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Flexbox CSS</h3>
+                    <p class="text-indigo-100">Nivel: Principiante</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">
+                        Domina Flexbox para crear layouts unidimensionales flexibles y alinear elementos con facilidad.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Justify y Align items</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dirección y wrap</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Ejercicios interactivos</span>
+                        </li>
+                    </ul>
+                    <div class="flex items-center justify-between text-indigo-600 font-semibold">
+                        <span>Comenzar guía</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Guía 3: Grid -->
+            <a href="grid.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-8 text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Grid CSS</h3>
+                    <p class="text-purple-100">Nivel: Intermedio</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">
+                        Crea layouts bidimensionales complejos con CSS Grid. El sistema más poderoso para diseños web.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Columnas y filas</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Gap y spanning</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Layouts avanzados</span>
+                        </li>
+                    </ul>
+                    <div class="flex items-center justify-between text-purple-600 font-semibold">
+                        <span>Comenzar guía</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Guía 4: Web Components -->
+            <a href="components.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-8 text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Web Components</h3>
+                    <p class="text-emerald-100">Nivel: Intermedio-Avanzado</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">
+                        Crea componentes reutilizables con la API nativa del navegador. Sin frameworks, sin dependencias.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Custom Elements</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Shadow DOM</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Componentes reutilizables</span>
+                        </li>
+                    </ul>
+                    <div class="flex items-center justify-between text-emerald-600 font-semibold">
+                        <span>Comenzar guía</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Guía 5: APIs REST -->
+            <a href="api.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-8 text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">APIs REST</h3>
+                    <p class="text-cyan-100">Nivel: Intermedio</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">
+                        Aprende a consumir APIs públicas para obtener datos en tiempo real. Ejemplos con Pokemon y el Clima.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Fetch API con async/await</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Manejo de errores</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Casos de uso reales</span>
+                        </li>
+                    </ul>
+                    <div class="flex items-center justify-between text-cyan-600 font-semibold">
+                        <span>Comenzar guía</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Free Creation Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-3xl p-12 text-white shadow-2xl max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0">
+                    <div class="w-24 h-24 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center text-6xl backdrop-blur-sm">
+                        🎨
+                    </div>
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">
+                        Crea Tu Propio Proyecto
+                    </h2>
+                    <p class="text-lg text-purple-100 mb-6">
+                        ¿Ya dominas lo básico? Usa <code class="bg-white bg-opacity-20 px-2 py-1 rounded font-mono">custom.html</code> 
+                        para crear lo que quieras. Un lienzo en blanco esperando tu creatividad.
+                    </p>
+                    <a href="custom.html" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                        <span>✨</span>
+                        <span>Página en Blanco</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-center text-white shadow-2xl max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                ¿Listo para Comenzar?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Elige una guía y comienza tu viaje para dominar Tailwind CSS. Aprende haciendo con ejemplos reales.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="responsive.html" class="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                    Empezar con Responsive
+                </a>
+                <a href="flex.html" class="px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-blue-800 transform hover:-translate-y-1 transition-all duration-200">
+                    Explorar Flexbox
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Tailwind CSS Playground</h3>
+                    <p class="text-gray-400 text-sm">
+                        Proyecto educativo para aprender diseño web moderno con Tailwind CSS y agentes de inteligencia artificial.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Guías</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="responsive.html" class="hover:text-blue-400 transition-colors">Diseño Responsive</a></li>
+                        <li><a href="flex.html" class="hover:text-blue-400 transition-colors">Flexbox CSS</a></li>
+                        <li><a href="grid.html" class="hover:text-blue-400 transition-colors">Grid CSS</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Recursos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://tailwindcss.com/docs" target="_blank" class="hover:text-blue-400 transition-colors">Documentación Tailwind</a></li>
+                        <li><a href="https://github.com/features/copilot" target="_blank" class="hover:text-blue-400 transition-colors">GitHub Copilot</a></li>
+                        <li><a href="https://developer.mozilla.org/" target="_blank" class="hover:text-blue-400 transition-colors">MDN Web Docs</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>Hecho con ❤️ para estudiantes que quieren aprender desarrollo web</p>
+                <p class="mt-2">🤖 Powered by GitHub Copilot & Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

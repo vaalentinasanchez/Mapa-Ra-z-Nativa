@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es_CL">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Grid CSS - Tailwind CSS</title>
+    <link rel="stylesheet" href="./../assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="grid.html" class="flex items-center gap-2 text-purple-600 hover:text-purple-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="font-semibold">Volver a la guía</span>
+                </a>
+                <h1 class="text-xl font-bold text-gray-800">✅ Solución de Grid</h1>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-600 to-emerald-700 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-2 bg-green-500 bg-opacity-50 rounded-full text-sm font-semibold mb-4">
+                    ✅ Solución: CSS Grid
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Dashboard con CSS Grid - Solución</h1>
+                <p class="text-xl text-green-100">
+                    Así es cómo usar CSS Grid para crear layouts complejos bidimensionales.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Instructions -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto bg-green-50 border-2 border-green-400 rounded-xl p-6">
+            <h2 class="text-2xl font-bold text-green-900 mb-4 flex items-center gap-2">
+                <span class="text-3xl">✅</span>
+                Solución Completa
+            </h2>
+            <div class="text-green-900 space-y-3">
+                <p class="font-semibold">Claves de la solución:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Sistema de 12 columnas:</strong> <code class="bg-green-200 px-2 py-1 rounded">grid grid-cols-12</code></li>
+                    <li><strong>Column span:</strong> <code class="bg-green-200 px-2 py-1 rounded">col-span-{n}</code> para ocupar múltiples columnas</li>
+                    <li><strong>Row span:</strong> <code class="bg-green-200 px-2 py-1 rounded">row-span-{n}</code> para ocupar múltiples filas</li>
+                    <li><strong>Responsive:</strong> Ajusta columnas en diferentes breakpoints</li>
+                    <li><strong>Gap:</strong> Espaciado consistente entre elementos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Dashboard Header -->
+        <section class="max-w-7xl mx-auto mb-8">
+            <!-- SOLUCIÓN: Grid de 12 columnas con gap de 6 -->
+            <div class="grid grid-cols-12 gap-6">
+                <!-- SOLUCIÓN: Esta card ocupa 12 columnas (ancho completo) -->
+                <div class="col-span-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-6 text-white">
+                    <h1 class="text-3xl font-bold mb-2">Dashboard Analítico</h1>
+                    <p class="text-purple-100">Bienvenido de vuelta, Juan. Aquí está el resumen de hoy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Cards -->
+        <section class="max-w-7xl mx-auto mb-8">
+            <!-- SOLUCIÓN: Grid responsive -->
+            <!-- SOLUCIÓN: 1 columna en móvil, 2 en tablet (md:), 4 en desktop (lg:) -->
+            <!-- SOLUCIÓN: Gap de 6 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Stat Card 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-gray-600 text-sm">Usuarios Activos</span>
+                        <span class="text-3xl">👥</span>
+                    </div>
+                    <div class="text-3xl font-bold text-blue-600">12,543</div>
+                    <div class="text-sm text-green-600 mt-2">↑ 12% vs mes anterior</div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-gray-600 text-sm">Ingresos</span>
+                        <span class="text-3xl">💰</span>
+                    </div>
+                    <div class="text-3xl font-bold text-green-600">$45,234</div>
+                    <div class="text-sm text-green-600 mt-2">↑ 8% vs mes anterior</div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-gray-600 text-sm">Pedidos</span>
+                        <span class="text-3xl">📦</span>
+                    </div>
+                    <div class="text-3xl font-bold text-purple-600">892</div>
+                    <div class="text-sm text-red-600 mt-2">↓ 3% vs mes anterior</div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-gray-600 text-sm">Satisfacción</span>
+                        <span class="text-3xl">⭐</span>
+                    </div>
+                    <div class="text-3xl font-bold text-yellow-600">98%</div>
+                    <div class="text-sm text-green-600 mt-2">↑ 2% vs mes anterior</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Main Dashboard Grid -->
+        <section class="max-w-7xl mx-auto mb-8">
+            <!-- SOLUCIÓN: Grid de 12 columnas, gap de 6, filas automáticas -->
+            <div class="grid grid-cols-12 gap-6 auto-rows-fr">
+                
+                <!-- Chart Principal - SOLUCIÓN: Ocupa 8 columnas, 2 filas -->
+                <div class="col-span-12 lg:col-span-8 lg:row-span-2 bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Ventas Mensuales</h2>
+                    <div class="h-64 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">📊</div>
+                            <p class="text-gray-600">Gráfico de ventas aquí</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actividad Reciente - SOLUCIÓN: Ocupa 4 columnas, 2 filas -->
+                <div class="col-span-12 lg:col-span-4 lg:row-span-2 bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Actividad Reciente</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 pb-3 border-b border-gray-100">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-lg flex-shrink-0">
+                                🛒
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-gray-800">Nueva compra</p>
+                                <p class="text-xs text-gray-600">Cliente #1234 - $129.99</p>
+                                <p class="text-xs text-gray-400 mt-1">Hace 5 min</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 pb-3 border-b border-gray-100">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-lg flex-shrink-0">
+                                ✓
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-gray-800">Pedido completado</p>
+                                <p class="text-xs text-gray-600">Orden #5678</p>
+                                <p class="text-xs text-gray-400 mt-1">Hace 12 min</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 pb-3 border-b border-gray-100">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-lg flex-shrink-0">
+                                👤
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-gray-800">Nuevo usuario</p>
+                                <p class="text-xs text-gray-600">maria@email.com</p>
+                                <p class="text-xs text-gray-400 mt-1">Hace 25 min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Productos - SOLUCIÓN: Ocupa 6 columnas -->
+                <div class="col-span-12 md:col-span-6 bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Top Productos</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">💻</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Laptop Pro</p>
+                                    <p class="text-sm text-gray-600">234 ventas</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-blue-600">$899</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">📱</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Smartphone X</p>
+                                    <p class="text-sm text-gray-600">189 ventas</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-green-600">$599</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🎧</span>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Auriculares Pro</p>
+                                    <p class="text-sm text-gray-600">156 ventas</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-purple-600">$199</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categorías - SOLUCIÓN: Ocupa 6 columnas -->
+                <div class="col-span-12 md:col-span-6 bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Ventas por Categoría</h2>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-semibold text-gray-700">Electrónica</span>
+                                <span class="text-sm text-gray-600">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-semibold text-gray-700">Ropa</span>
+                                <span class="text-sm text-gray-600">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-semibold text-gray-700">Hogar</span>
+                                <span class="text-sm text-gray-600">15%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-semibold text-gray-700">Otros</span>
+                                <span class="text-sm text-gray-600">10%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-pink-600 h-2 rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Clientes y Mapa -->
+        <section class="max-w-7xl mx-auto mb-8">
+            <!-- SOLUCIÓN: Grid de 12 columnas, gap de 6 -->
+            <div class="grid grid-cols-12 gap-6">
+                
+                <!-- Últimos Clientes - SOLUCIÓN: Ocupa 5 columnas -->
+                <div class="col-span-12 lg:col-span-5 bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Últimos Clientes</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg transition-colors">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                                JP
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-800 text-sm">Juan Pérez</p>
+                                <p class="text-xs text-gray-600">juan@email.com</p>
+                            </div>
+                            <span class="text-xs text-gray-500">Hoy</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg transition-colors">
+                            <div class="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                                MS
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-800 text-sm">María Silva</p>
+                                <p class="text-xs text-gray-600">maria@email.com</p>
+                            </div>
+                            <span class="text-xs text-gray-500">Ayer</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg transition-colors">
+                            <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                                PR
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-800 text-sm">Pedro Rojas</p>
+                                <p class="text-xs text-gray-600">pedro@email.com</p>
+                            </div>
+                            <span class="text-xs text-gray-500">2 días</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa de Ventas - SOLUCIÓN: Ocupa 7 columnas -->
+                <div class="col-span-12 lg:col-span-7 bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Ventas por Región</h2>
+                    <div class="h-64 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">🗺️</div>
+                            <p class="text-gray-600">Mapa de calor aquí</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Gallery de Productos -->
+        <section class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Galería de Productos</h2>
+            
+            <!-- SOLUCIÓN: Grid responsive -->
+            <!-- SOLUCIÓN: 2 columnas en móvil, 3 en tablet (md:), 6 en desktop (lg:) -->
+            <!-- SOLUCIÓN: Gap de 4 -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                
+                <div class="aspect-square bg-gradient-to-br from-red-400 to-pink-500 rounded-lg flex items-center justify-center text-white text-4xl">
+                    💻
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center text-white text-4xl">
+                    📱
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center text-white text-4xl">
+                    🎧
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center text-white text-4xl">
+                    ⌚
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center text-white text-4xl">
+                    📷
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-pink-400 to-rose-500 rounded-lg flex items-center justify-center text-white text-4xl">
+                    🎮
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Learning Summary -->
+        <section class="max-w-7xl mx-auto mt-12">
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-400 rounded-xl p-8">
+                <h2 class="text-2xl font-bold text-green-900 mb-6 flex items-center gap-2">
+                    <span class="text-3xl">🎓</span>
+                    Lo que aprendiste
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-green-900 mb-3">✅ Conceptos de Grid</h3>
+                        <ul class="space-y-2 text-green-800">
+                            <li>✓ Sistema de 12 columnas con <code class="bg-white px-2 py-1 rounded">grid-cols-12</code></li>
+                            <li>✓ Column span con <code class="bg-white px-2 py-1 rounded">col-span-{n}</code></li>
+                            <li>✓ Row span con <code class="bg-white px-2 py-1 rounded">row-span-{n}</code></li>
+                            <li>✓ Layouts complejos bidimensionales</li>
+                            <li>✓ Grid responsive con breakpoints</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-green-900 mb-3">💡 Cuándo usar Grid</h3>
+                        <ul class="space-y-2 text-green-800">
+                            <li>• Dashboards y layouts complejos</li>
+                            <li>• Galerías con tamaños variables</li>
+                            <li>• Layouts que necesitan filas y columnas</li>
+                            <li>• Elementos que ocupan múltiples espacios</li>
+                            <li>• Diseños que no son lineales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Success Badge -->
+    <div class="fixed bottom-4 right-4">
+        <div class="bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+            <span class="text-2xl">✅</span>
+        </div>
+    </div>
+
+</body>
+</html>

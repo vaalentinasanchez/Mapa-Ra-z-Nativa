@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es_CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Web Components - Tailwind CSS</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2 text-emerald-600 hover:text-emerald-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="font-semibold">Volver al inicio</span>
+                </a>
+                <h1 class="text-xl font-bold text-gray-800">🧩 Web Components</h1>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-2 bg-emerald-500 bg-opacity-50 rounded-full text-sm font-semibold mb-4">
+                    🎓 Nivel: Intermedio-Avanzado
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Web Components Nativos</h1>
+                <p class="text-xl text-emerald-100">
+                    Aprende a crear componentes reutilizables usando la API nativa del navegador. Sin frameworks, sin dependencias.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Intro Section -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Qué son los Web Components? 🤔</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    Los Web Components son un conjunto de <strong>APIs nativas del navegador</strong> que te permiten crear 
+                    <strong>componentes reutilizables</strong> con HTML, CSS y JavaScript. No necesitas frameworks ni librerías.
+                </p>
+                <p class="text-lg text-gray-700 mb-6">
+                    Son como "bloques LEGO" de código que puedes usar una y otra vez en diferentes proyectos.
+                </p>
+
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-lg mb-6">
+                    <h3 class="font-bold text-emerald-900 mb-3 text-xl">🎯 Ventajas de Web Components</h3>
+                    <ul class="space-y-2 text-emerald-800">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">✓</span>
+                            <span><strong>Sin dependencias:</strong> Funciona con JavaScript puro del navegador</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">✓</span>
+                            <span><strong>Reutilizables:</strong> Escribe una vez, usa en cualquier lugar</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">✓</span>
+                            <span><strong>Encapsulados:</strong> Los estilos no afectan el resto de la página</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">✓</span>
+                            <span><strong>Framework-agnostic:</strong> Funciona con React, Vue, o HTML puro</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">✓</span>
+                            <span><strong>Estándar web:</strong> Soportado por todos los navegadores modernos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                    <h3 class="font-bold text-blue-900 mb-3 text-xl">🧩 Los 3 Pilares de Web Components</h3>
+                    <div class="grid gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-2">1️⃣ Custom Elements</h4>
+                            <p class="text-blue-700 text-sm">Define tus propias etiquetas HTML personalizadas</p>
+                            <code class="text-xs bg-blue-100 px-2 py-1 rounded mt-2 inline-block">&lt;mi-componente&gt;&lt;/mi-componente&gt;</code>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-2">2️⃣ Shadow DOM</h4>
+                            <p class="text-blue-700 text-sm">Encapsula estilos y estructura sin afectar el resto</p>
+                            <code class="text-xs bg-blue-100 px-2 py-1 rounded mt-2 inline-block">attachShadow({ mode: 'open' })</code>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-2">3️⃣ HTML Templates</h4>
+                            <p class="text-blue-700 text-sm">Reutiliza fragmentos de HTML sin renderizar</p>
+                            <code class="text-xs bg-blue-100 px-2 py-1 rounded mt-2 inline-block">&lt;template&gt;...&lt;/template&gt;</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo 1: Tu Primer Componente -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-2">Demo 1: Tu Primer Componente 🎯</h2>
+                <p class="text-emerald-100">Crea un componente simple "hola-mundo"</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Código -->
+                <div class="bg-gray-900 rounded-xl p-6 text-white overflow-auto">
+                    <h3 class="text-lg font-bold text-emerald-400 mb-4">💻 JavaScript</h3>
+                    <pre class="text-sm"><code><span class="text-purple-400">class</span> <span class="text-yellow-400">HolaMundo</span> <span class="text-purple-400">extends</span> <span class="text-yellow-400">HTMLElement</span> {
+  <span class="text-blue-400">connectedCallback</span>() {
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">innerHTML</span> = <span class="text-green-400">`
+      &lt;div class="bg-emerald-500 text-white 
+                  p-6 rounded-lg text-center"&gt;
+        &lt;h2 class="text-2xl font-bold"&gt;
+          ¡Hola Mundo! 👋
+        &lt;/h2&gt;
+        &lt;p&gt;Mi primer Web Component&lt;/p&gt;
+      &lt;/div&gt;
+    `</span>;
+  }
+}
+
+<span class="text-gray-400">// Registrar el componente</span>
+<span class="text-blue-400">customElements</span>.<span class="text-yellow-400">define</span>(
+  <span class="text-green-400">'hola-mundo'</span>, 
+  HolaMundo
+);</code></pre>
+                    <h3 class="text-lg font-bold text-emerald-400 mb-2 mt-6">💻 HTML</h3>
+                    <pre class="text-sm"><code><span class="text-gray-400">&lt;!-- Usar el componente --&gt;</span>
+<span class="text-pink-400">&lt;hola-mundo&gt;&lt;/hola-mundo&gt;</span></code></pre>
+                </div>
+
+                <!-- Resultado -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">✨ Resultado:</h3>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                        <hola-mundo></hola-mundo>
+                    </div>
+                    <div class="mt-4 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                        <p class="text-sm text-yellow-800">
+                            <strong>💡 Tip:</strong> El componente se renderiza automáticamente cuando se agrega al DOM.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo 2: Componente con Atributos -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-2">Demo 2: Componentes con Atributos 🎨</h2>
+                <p class="text-blue-100">Pasa datos a tus componentes usando atributos HTML</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Código -->
+                <div class="bg-gray-900 rounded-xl p-6 text-white overflow-auto">
+                    <h3 class="text-lg font-bold text-blue-400 mb-4">💻 JavaScript</h3>
+                    <pre class="text-sm"><code><span class="text-purple-400">class</span> <span class="text-yellow-400">TarjetaPerfil</span> <span class="text-purple-400">extends</span> <span class="text-yellow-400">HTMLElement</span> {
+  <span class="text-blue-400">connectedCallback</span>() {
+    <span class="text-purple-400">const</span> nombre = <span class="text-purple-400">this</span>.<span class="text-blue-400">getAttribute</span>(<span class="text-green-400">'nombre'</span>);
+    <span class="text-purple-400">const</span> rol = <span class="text-purple-400">this</span>.<span class="text-blue-400">getAttribute</span>(<span class="text-green-400">'rol'</span>);
+    <span class="text-purple-400">const</span> color = <span class="text-purple-400">this</span>.<span class="text-blue-400">getAttribute</span>(<span class="text-green-400">'color'</span>) || <span class="text-green-400">'blue'</span>;
+    
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">innerHTML</span> = <span class="text-green-400">`
+      &lt;div class="bg-white rounded-lg 
+                  shadow-lg p-6 text-center"&gt;
+        &lt;div class="w-20 h-20 bg-<span class="text-yellow-300">${color}</span>-500 
+                    rounded-full mx-auto mb-4 
+                    flex items-center justify-center 
+                    text-white text-3xl"&gt;
+          👤
+        &lt;/div&gt;
+        &lt;h3 class="text-xl font-bold 
+                   text-gray-800"&gt;<span class="text-yellow-300">${nombre}</span>&lt;/h3&gt;
+        &lt;p class="text-<span class="text-yellow-300">${color}</span>-600 
+                  font-semibold"&gt;<span class="text-yellow-300">${rol}</span>&lt;/p&gt;
+      &lt;/div&gt;
+    `</span>;
+  }
+}
+
+<span class="text-blue-400">customElements</span>.<span class="text-yellow-400">define</span>(
+  <span class="text-green-400">'tarjeta-perfil'</span>, 
+  TarjetaPerfil
+);</code></pre>
+                    <h3 class="text-lg font-bold text-blue-400 mb-2 mt-4">💻 HTML</h3>
+                    <pre class="text-sm"><code><span class="text-pink-400">&lt;tarjeta-perfil 
+  nombre="Ana García"
+  rol="Desarrolladora"
+  color="purple"&gt;
+&lt;/tarjeta-perfil&gt;</span></code></pre>
+                </div>
+
+                <!-- Resultado -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">✨ Resultado:</h3>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 space-y-4">
+                        <tarjeta-perfil nombre="Ana García" rol="Desarrolladora" color="purple"></tarjeta-perfil>
+                        <tarjeta-perfil nombre="Carlos López" rol="Diseñador UX" color="blue"></tarjeta-perfil>
+                        <tarjeta-perfil nombre="María Silva" rol="Product Manager" color="pink"></tarjeta-perfil>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo 3: Componente Interactivo -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-2">Demo 3: Componente Interactivo ⚡</h2>
+                <p class="text-purple-100">Agrega eventos y lógica a tus componentes</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Código -->
+                <div class="bg-gray-900 rounded-xl p-6 text-white overflow-auto max-h-[600px]">
+                    <h3 class="text-lg font-bold text-purple-400 mb-4">💻 JavaScript</h3>
+                    <pre class="text-sm"><code><span class="text-purple-400">class</span> <span class="text-yellow-400">ContadorBoton</span> <span class="text-purple-400">extends</span> <span class="text-yellow-400">HTMLElement</span> {
+  <span class="text-blue-400">constructor</span>() {
+    <span class="text-purple-400">super</span>();
+    <span class="text-purple-400">this</span>.contador = <span class="text-orange-400">0</span>;
+  }
+
+  <span class="text-blue-400">connectedCallback</span>() {
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">render</span>();
+    
+    <span class="text-gray-400">// Agregar event listeners</span>
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">querySelector</span>(<span class="text-green-400">'.btn-mas'</span>)
+      .<span class="text-blue-400">addEventListener</span>(<span class="text-green-400">'click'</span>, () => {
+        <span class="text-purple-400">this</span>.contador++;
+        <span class="text-purple-400">this</span>.<span class="text-blue-400">actualizar</span>();
+      });
+      
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">querySelector</span>(<span class="text-green-400">'.btn-menos'</span>)
+      .<span class="text-blue-400">addEventListener</span>(<span class="text-green-400">'click'</span>, () => {
+        <span class="text-purple-400">this</span>.contador--;
+        <span class="text-purple-400">this</span>.<span class="text-blue-400">actualizar</span>();
+      });
+      
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">querySelector</span>(<span class="text-green-400">'.btn-reset'</span>)
+      .<span class="text-blue-400">addEventListener</span>(<span class="text-green-400">'click'</span>, () => {
+        <span class="text-purple-400">this</span>.contador = <span class="text-orange-400">0</span>;
+        <span class="text-purple-400">this</span>.<span class="text-blue-400">actualizar</span>();
+      });
+  }
+
+  <span class="text-blue-400">actualizar</span>() {
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">querySelector</span>(<span class="text-green-400">'.contador'</span>)
+      .<span class="text-blue-400">textContent</span> = <span class="text-purple-400">this</span>.contador;
+  }
+
+  <span class="text-blue-400">render</span>() {
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">innerHTML</span> = <span class="text-green-400">`
+      &lt;div class="bg-white rounded-lg 
+                  shadow-lg p-6 text-center"&gt;
+        &lt;div class="text-6xl font-bold 
+                    text-purple-600 mb-4 contador"&gt;
+          <span class="text-yellow-300">${this.contador}</span>
+        &lt;/div&gt;
+        &lt;div class="flex gap-2 justify-center"&gt;
+          &lt;button class="btn-menos 
+                         bg-red-500 hover:bg-red-600 
+                         text-white px-4 py-2 rounded-lg"&gt;
+            ➖ Menos
+          &lt;/button&gt;
+          &lt;button class="btn-reset 
+                         bg-gray-500 hover:bg-gray-600 
+                         text-white px-4 py-2 rounded-lg"&gt;
+            🔄 Reset
+          &lt;/button&gt;
+          &lt;button class="btn-mas 
+                         bg-green-500 hover:bg-green-600 
+                         text-white px-4 py-2 rounded-lg"&gt;
+            ➕ Más
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    `</span>;
+  }
+}
+
+<span class="text-blue-400">customElements</span>.<span class="text-yellow-400">define</span>(
+  <span class="text-green-400">'contador-boton'</span>, 
+  ContadorBoton
+);</code></pre>
+                </div>
+
+                <!-- Resultado -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">✨ Resultado:</h3>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                        <contador-boton></contador-boton>
+                    </div>
+                    <div class="mt-4 bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
+                        <p class="text-sm text-purple-800">
+                            <strong>💡 Tip:</strong> Los event listeners se agregan en <code class="bg-purple-200 px-1 rounded">connectedCallback()</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo 4: Shadow DOM -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-orange-500 to-red-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-2">Demo 4: Shadow DOM 🌑</h2>
+                <p class="text-orange-100">Encapsula estilos para que no afecten el resto de la página</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">¿Qué es Shadow DOM?</h3>
+                <p class="text-gray-700 mb-4">
+                    Shadow DOM crea un <strong>"DOM en la sombra"</strong> donde los estilos CSS están completamente 
+                    <strong>encapsulados</strong>. Los estilos dentro no afectan fuera, y viceversa.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 border-2 border-green-500 rounded-lg p-4">
+                        <h4 class="font-bold text-green-800 mb-2">✅ Con Shadow DOM</h4>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li>✓ Estilos encapsulados</li>
+                            <li>✓ Sin conflictos de CSS</li>
+                            <li>✓ Componente autónomo</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 border-2 border-red-500 rounded-lg p-4">
+                        <h4 class="font-bold text-red-800 mb-2">❌ Sin Shadow DOM</h4>
+                        <ul class="text-sm text-red-700 space-y-1">
+                            <li>✗ Estilos globales</li>
+                            <li>✗ Posibles conflictos</li>
+                            <li>✗ CSS puede filtrarse</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Código -->
+                <div class="bg-gray-900 rounded-xl p-6 text-white overflow-auto max-h-[600px]">
+                    <h3 class="text-lg font-bold text-orange-400 mb-4">💻 JavaScript</h3>
+                    <pre class="text-sm"><code><span class="text-purple-400">class</span> <span class="text-yellow-400">BotonCustom</span> <span class="text-purple-400">extends</span> <span class="text-yellow-400">HTMLElement</span> {
+  <span class="text-blue-400">connectedCallback</span>() {
+    <span class="text-gray-400">// Crear Shadow DOM</span>
+    <span class="text-purple-400">const</span> shadow = <span class="text-purple-400">this</span>.<span class="text-blue-400">attachShadow</span>({
+      mode: <span class="text-green-400">'open'</span>
+    });
+    
+    <span class="text-gray-400">// Estilos encapsulados</span>
+    shadow.<span class="text-blue-400">innerHTML</span> = <span class="text-green-400">`
+      &lt;style&gt;
+        button {
+          background: linear-gradient(
+            135deg, 
+            #667eea 0%, 
+            #764ba2 100%
+          );
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+          font-size: 1.125rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: transform 0.2s;
+        }
+        
+        button:hover {
+          transform: scale(1.05);
+        }
+        
+        button:active {
+          transform: scale(0.95);
+        }
+      &lt;/style&gt;
+      
+      &lt;button&gt;
+        <span class="text-yellow-300">${this.getAttribute('texto')}</span>
+      &lt;/button&gt;
+    `</span>;
+  }
+}
+
+<span class="text-blue-400">customElements</span>.<span class="text-yellow-400">define</span>(
+  <span class="text-green-400">'boton-custom'</span>, 
+  BotonCustom
+);</code></pre>
+                </div>
+
+                <!-- Resultado -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">✨ Resultado:</h3>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center space-y-4">
+                        <boton-custom texto="Botón con Shadow DOM"></boton-custom>
+                        <boton-custom texto="Otro Botón Encapsulado"></boton-custom>
+                        <div class="pt-4 border-t-2 border-gray-200">
+                            <button class="bg-gray-500 text-white px-4 py-2 rounded">Botón normal (sin encapsular)</button>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
+                        <p class="text-sm text-orange-800">
+                            <strong>💡 Nota:</strong> Los estilos del Shadow DOM no afectan al botón normal de abajo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos de Uso Reales -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-2">Casos de Uso Reales 🎯</h2>
+                <p class="text-cyan-100">Ejemplos prácticos de dónde usar Web Components</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
+                        <h3 class="text-xl font-bold">📊 Widget de Estadísticas</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Muestra métricas reutilizables en dashboards.</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <pre class="text-sm"><code>&lt;stat-widget 
+  label="Usuarios"
+  value="12,543"
+  trend="up"
+  percent="12"&gt;
+&lt;/stat-widget&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 p-4 text-white">
+                        <h3 class="text-xl font-bold">💳 Card de Producto</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Tarjeta de producto para e-commerce.</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <pre class="text-sm"><code>&lt;product-card 
+  name="Laptop Pro"
+  price="$899"
+  image="laptop.jpg"
+  rating="4.5"&gt;
+&lt;/product-card&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-4 text-white">
+                        <h3 class="text-xl font-bold">🔔 Notificación Toast</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Mensajes temporales de notificación.</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <pre class="text-sm"><code>&lt;toast-notification 
+  type="success"
+  message="Guardado"
+  duration="3000"&gt;
+&lt;/toast-notification&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-4 text-white">
+                        <h3 class="text-xl font-bold">⭐ Rating de Estrellas</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Sistema de calificación con estrellas.</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <pre class="text-sm"><code>&lt;star-rating 
+  value="4"
+  max="5"
+  editable="true"&gt;
+&lt;/star-rating&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-yellow-500 to-orange-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-2">Mejores Prácticas 📚</h2>
+                <p class="text-yellow-100">Tips para crear Web Components profesionales</p>
+            </div>
+
+            <div class="grid gap-6">
+                <!-- Do's -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-green-600 mb-4 flex items-center gap-2">
+                        <span class="text-3xl">✅</span>
+                        <span>Sí Hacer (Do's)</span>
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-600 text-xl">✓</span>
+                            <div>
+                                <strong class="text-gray-800">Usa nombres con guión:</strong>
+                                <code class="bg-gray-100 px-2 py-1 rounded text-sm ml-2">&lt;mi-componente&gt;</code>
+                                <p class="text-sm text-gray-600 mt-1">Los custom elements DEBEN tener al menos un guión en el nombre</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-600 text-xl">✓</span>
+                            <div>
+                                <strong class="text-gray-800">Limpia event listeners:</strong>
+                                <p class="text-sm text-gray-600 mt-1">Usa <code class="bg-gray-100 px-1 rounded">disconnectedCallback()</code> para remover listeners</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-600 text-xl">✓</span>
+                            <div>
+                                <strong class="text-gray-800">Usa Shadow DOM para encapsulación:</strong>
+                                <p class="text-sm text-gray-600 mt-1">Evita conflictos de estilos con el resto de la página</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-600 text-xl">✓</span>
+                            <div>
+                                <strong class="text-gray-800">Valida atributos:</strong>
+                                <p class="text-sm text-gray-600 mt-1">Siempre proporciona valores por defecto para atributos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Don'ts -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4 flex items-center gap-2">
+                        <span class="text-3xl">❌</span>
+                        <span>No Hacer (Don'ts)</span>
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-600 text-xl">✗</span>
+                            <div>
+                                <strong class="text-gray-800">No uses nombres sin guión:</strong>
+                                <code class="bg-gray-100 px-2 py-1 rounded text-sm ml-2 line-through">&lt;micomponente&gt;</code>
+                                <p class="text-sm text-gray-600 mt-1">Causará un error de sintaxis</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-600 text-xl">✗</span>
+                            <div>
+                                <strong class="text-gray-800">No modifiques el DOM en el constructor:</strong>
+                                <p class="text-sm text-gray-600 mt-1">Usa <code class="bg-gray-100 px-1 rounded">connectedCallback()</code> en su lugar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-600 text-xl">✗</span>
+                            <div>
+                                <strong class="text-gray-800">No olvides llamar a super():</strong>
+                                <p class="text-sm text-gray-600 mt-1">Siempre llama <code class="bg-gray-100 px-1 rounded">super()</code> en el constructor</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-600 text-xl">✗</span>
+                            <div>
+                                <strong class="text-gray-800">No dependas de Tailwind en Shadow DOM:</strong>
+                                <p class="text-sm text-gray-600 mt-1">Las clases de Tailwind no funcionan dentro de Shadow DOM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lifecycle Callbacks -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-2">Ciclo de Vida (Lifecycle) 🔄</h2>
+                <p class="text-indigo-100">Métodos que se ejecutan en diferentes momentos del componente</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-indigo-600 text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-bold">Callback</th>
+                                <th class="px-6 py-4 text-left font-bold">Cuándo se ejecuta</th>
+                                <th class="px-6 py-4 text-left font-bold">Uso común</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-indigo-50">
+                                <td class="px-6 py-4">
+                                    <code class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded font-mono text-sm">constructor()</code>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Al crear la instancia del elemento</td>
+                                <td class="px-6 py-4 text-gray-700">Inicializar estado, attachShadow()</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50">
+                                <td class="px-6 py-4">
+                                    <code class="bg-green-100 text-green-800 px-2 py-1 rounded font-mono text-sm">connectedCallback()</code>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Cuando se agrega al DOM</td>
+                                <td class="px-6 py-4 text-gray-700">Renderizar, agregar event listeners</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50">
+                                <td class="px-6 py-4">
+                                    <code class="bg-red-100 text-red-800 px-2 py-1 rounded font-mono text-sm">disconnectedCallback()</code>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Cuando se remueve del DOM</td>
+                                <td class="px-6 py-4 text-gray-700">Limpiar listeners, timers, etc.</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50">
+                                <td class="px-6 py-4">
+                                    <code class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded font-mono text-sm">attributeChangedCallback()</code>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Cuando un atributo observado cambia</td>
+                                <td class="px-6 py-4 text-gray-700">Reaccionar a cambios de props</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50">
+                                <td class="px-6 py-4">
+                                    <code class="bg-purple-100 text-purple-800 px-2 py-1 rounded font-mono text-sm">adoptedCallback()</code>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Cuando se mueve a otro documento</td>
+                                <td class="px-6 py-4 text-gray-700">Caso raro, iframes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 text-white rounded-xl p-6 mt-6">
+                <h3 class="text-lg font-bold text-indigo-400 mb-4">💻 Ejemplo Completo del Ciclo de Vida</h3>
+                <pre class="text-sm overflow-x-auto"><code><span class="text-purple-400">class</span> <span class="text-yellow-400">MiComponente</span> <span class="text-purple-400">extends</span> <span class="text-yellow-400">HTMLElement</span> {
+  <span class="text-gray-400">// Paso 1: Constructor</span>
+  <span class="text-blue-400">constructor</span>() {
+    <span class="text-purple-400">super</span>();
+    <span class="text-blue-400">console</span>.<span class="text-yellow-400">log</span>(<span class="text-green-400">'1. Constructor llamado'</span>);
+  }
+  
+  <span class="text-gray-400">// Paso 2: Conectado al DOM</span>
+  <span class="text-blue-400">connectedCallback</span>() {
+    <span class="text-blue-400">console</span>.<span class="text-yellow-400">log</span>(<span class="text-green-400">'2. Conectado al DOM'</span>);
+    <span class="text-purple-400">this</span>.<span class="text-blue-400">innerHTML</span> = <span class="text-green-400">'&lt;p&gt;¡Hola!&lt;/p&gt;'</span>;
+  }
+  
+  <span class="text-gray-400">// Paso 3: Desconectado del DOM</span>
+  <span class="text-blue-400">disconnectedCallback</span>() {
+    <span class="text-blue-400">console</span>.<span class="text-yellow-400">log</span>(<span class="text-green-400">'3. Desconectado del DOM'</span>);
+  }
+  
+  <span class="text-gray-400">// Atributos a observar</span>
+  <span class="text-purple-400">static get</span> <span class="text-blue-400">observedAttributes</span>() {
+    <span class="text-purple-400">return</span> [<span class="text-green-400">'nombre'</span>];
+  }
+  
+  <span class="text-gray-400">// Cuando cambia un atributo</span>
+  <span class="text-blue-400">attributeChangedCallback</span>(name, oldValue, newValue) {
+    <span class="text-blue-400">console</span>.<span class="text-yellow-400">log</span>(<span class="text-green-400">`Atributo <span class="text-yellow-300">${name}</span> cambió de <span class="text-yellow-300">${oldValue}</span> a <span class="text-yellow-300">${newValue}</span>`</span>);
+  }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Conclusión -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-xl p-8 text-white">
+                <h2 class="text-3xl font-bold mb-6">🎓 Resumen y Próximos Pasos</h2>
+                
+                <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6 backdrop-blur-sm">
+                    <h3 class="text-xl font-bold mb-4">Lo que aprendiste:</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Qué son los Web Components</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Crear Custom Elements</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Usar atributos y props</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Agregar interactividad</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Shadow DOM y encapsulación</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Lifecycle callbacks</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Mejores prácticas</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-300">✓</span>
+                                <span>Casos de uso reales</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="index.html" class="px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg text-center hover:bg-emerald-50 transition-colors">
+                        ← Volver al Inicio
+                    </a>
+                    <a href="ejercicio-components.html" class="px-6 py-3 bg-emerald-700 text-white font-semibold rounded-lg text-center hover:bg-emerald-800 transition-colors">
+                        Ir al Ejercicio →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Exercise CTA -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl shadow-2xl p-8 text-white">
+                <div class="flex items-start gap-6">
+                    <div class="text-6xl">✏️</div>
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-bold mb-3">¡Hora de Practicar!</h2>
+                        <p class="text-emerald-100 text-lg mb-6">
+                            Crea tus propios Web Components reutilizables. Construye una biblioteca de componentes 
+                            para usar en tus proyectos.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="ejercicio-components.html" class="px-6 py-3 bg-white text-emerald-600 font-bold rounded-lg text-center hover:bg-emerald-50 transition-colors shadow-lg">
+                                📝 Comenzar Ejercicio
+                            </a>
+                            <a href="solved/ejercicio-components-solucion.html" class="px-6 py-3 bg-emerald-800 bg-opacity-50 text-white font-semibold rounded-lg text-center hover:bg-emerald-800 hover:bg-opacity-70 transition-colors border-2 border-white border-opacity-30">
+                                ✅ Ver Solución
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">Hecho con ❤️ para estudiantes | Tailwind CSS Playground</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para los componentes demostrados -->
+    <script src="./assets/js/web-components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es_CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio APIs - Tailwind CSS</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="api.html" class="flex items-center gap-2 text-cyan-600 hover:text-cyan-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="font-semibold">Volver al tutorial</span>
+                </a>
+                <h1 class="text-xl font-bold text-gray-800">✏️ Ejercicio de APIs</h1>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="bg-gradient-to-r from-purple-600 to-pink-700 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-2 bg-purple-500 bg-opacity-50 rounded-full text-sm font-semibold mb-4">
+                    🎯 Desafío Práctico
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Ejercicio: Consume APIs</h1>
+                <p class="text-xl text-purple-100">
+                    Completa estos 3 desafíos para dominar el consumo de APIs REST
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Instrucciones -->
+        <section class="max-w-4xl mx-auto mb-12">
+            <div class="bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl p-8 text-white mb-6">
+                <h2 class="text-3xl font-bold mb-4">📋 Instrucciones</h2>
+                <div class="space-y-3 text-blue-50">
+                    <p>✅ Completa los <strong>3 desafíos</strong> que se muestran abajo</p>
+                    <p>✅ Usa <strong>async/await</strong> para las peticiones</p>
+                    <p>✅ Maneja los <strong>errores</strong> correctamente con try/catch</p>
+                    <p>✅ Muestra <strong>loading</strong> mientras se cargan los datos</p>
+                    <p>✅ El código está en <code class="bg-white bg-opacity-20 px-2 py-1 rounded">assets/js/ejercicio-api.js</code></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desafío 1: Buscador de Rick & Morty -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Desafío 1: Rick & Morty API 👽</h3>
+                            <p class="text-green-100">Busca personajes de la serie</p>
+                        </div>
+                        <div class="text-4xl">🛸</div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="p-6">
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-6">
+                        <h4 class="font-bold text-yellow-900 mb-2">📝 Tu tarea:</h4>
+                        <ul class="text-yellow-800 space-y-1 text-sm">
+                            <li>• Completa la función <code class="bg-yellow-200 px-2 py-1 rounded">buscarPersonaje()</code></li>
+                            <li>• Usa la API: <code class="bg-yellow-200 px-2 py-1 rounded">https://rickandmortyapi.com/api/character/?name=rick</code></li>
+                            <li>• Muestra: nombre, especie, estado, imagen</li>
+                            <li>• Maneja el caso cuando no se encuentra el personaje</li>
+                        </ul>
+                    </div>
+
+                    <!-- Input -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nombre del personaje:</label>
+                        <input 
+                            type="text" 
+                            id="character-input" 
+                            placeholder="rick, morty, summer..."
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none"
+                        >
+                    </div>
+
+                    <button 
+                        id="search-character-btn"
+                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors mb-6">
+                        🔍 Buscar Personaje
+                    </button>
+
+                    <!-- Result -->
+                    <div id="character-result" class="bg-gray-50 rounded-lg p-6 text-center text-gray-500">
+                        <div class="text-6xl mb-4">👽</div>
+                        <p>Busca un personaje para comenzar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desafío 2: Generador de Usuarios Aleatorios -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Desafío 2: Random User Generator 👤</h3>
+                            <p class="text-blue-100">Genera usuarios aleatorios</p>
+                        </div>
+                        <div class="text-4xl">🎲</div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="p-6">
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-6">
+                        <h4 class="font-bold text-yellow-900 mb-2">📝 Tu tarea:</h4>
+                        <ul class="text-yellow-800 space-y-1 text-sm">
+                            <li>• Completa la función <code class="bg-yellow-200 px-2 py-1 rounded">generarUsuario()</code></li>
+                            <li>• Usa la API: <code class="bg-yellow-200 px-2 py-1 rounded">https://randomuser.me/api/</code></li>
+                            <li>• Muestra: foto, nombre completo, email, país, edad</li>
+                            <li>• Bonus: Agrega un botón para generar otro usuario</li>
+                        </ul>
+                    </div>
+
+                    <button 
+                        id="generate-user-btn"
+                        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors mb-6">
+                        🎲 Generar Usuario Aleatorio
+                    </button>
+
+                    <!-- Result -->
+                    <div id="user-result" class="bg-gray-50 rounded-lg p-6 text-center text-gray-500">
+                        <div class="text-6xl mb-4">👤</div>
+                        <p>Haz clic en el botón para generar un usuario</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desafío 3: Buscador de GIFs -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-pink-500 to-rose-600 p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Desafío 3: Giphy API 🎬</h3>
+                            <p class="text-pink-100">Busca GIFs animados</p>
+                        </div>
+                        <div class="text-4xl">🎥</div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="p-6">
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-6">
+                        <h4 class="font-bold text-yellow-900 mb-2">📝 Tu tarea:</h4>
+                        <ul class="text-yellow-800 space-y-1 text-sm">
+                            <li>• Completa la función <code class="bg-yellow-200 px-2 py-1 rounded">buscarGifs()</code></li>
+                            <li>• Usa la API: <code class="bg-yellow-200 px-2 py-1 rounded">https://api.giphy.com/v1/gifs/search</code></li>
+                            <li>• API Key: <code class="bg-yellow-200 px-2 py-1 rounded">CW8uFtUiFD2vPvGBEtKSS7fInBfRtWtj</code></li>
+                            <li>• Muestra una grilla de 6 GIFs con sus títulos</li>
+                            <li>• Bonus: Haz los GIFs clickeables para verlos en grande</li>
+                        </ul>
+                    </div>
+
+                    <!-- Input -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Buscar GIFs:</label>
+                        <input 
+                            type="text" 
+                            id="gif-input" 
+                            placeholder="cats, funny, coding..."
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none"
+                        >
+                    </div>
+
+                    <button 
+                        id="search-gifs-btn"
+                        class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-colors mb-6">
+                        🔎 Buscar GIFs
+                    </button>
+
+                    <!-- Result -->
+                    <div id="gifs-result" class="bg-gray-50 rounded-lg p-6 text-center text-gray-500">
+                        <div class="text-6xl mb-4">🎬</div>
+                        <p>Busca algo para ver GIFs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonus Challenge -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-orange-500 to-red-600 rounded-xl p-8 text-white">
+                <div class="flex items-start gap-6">
+                    <div class="text-6xl">🏆</div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Desafío Bonus 💪</h2>
+                        <p class="text-orange-100 mb-4">Si quieres llevar tus habilidades al siguiente nivel:</p>
+                        <ul class="space-y-2 text-orange-50">
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-300">⭐</span>
+                                <span>Crea un buscador de películas con <strong>OMDB API</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-300">⭐</span>
+                                <span>Implementa <strong>paginación</strong> para mostrar más resultados</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-300">⭐</span>
+                                <span>Agrega un <strong>debounce</strong> para no hacer requests en cada tecla</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-300">⭐</span>
+                                <span>Guarda los <strong>favoritos</strong> en localStorage</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-300">⭐</span>
+                                <span>Implementa un <strong>infinite scroll</strong> para cargar más resultados</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ayuda -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <span class="text-3xl">💡</span>
+                    <span>Ayuda y Tips</span>
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- Tip 1 -->
+                    <div class="border-l-4 border-blue-500 pl-6">
+                        <h3 class="font-bold text-gray-800 mb-2">🔹 Estructura básica de fetch con async/await</h3>
+                        <div class="bg-gray-900 text-white p-4 rounded-lg text-sm">
+                            <pre><code><span class="text-purple-400">async function</span> <span class="text-yellow-400">obtenerDatos</span>() {
+  <span class="text-purple-400">try</span> {
+    <span class="text-purple-400">const</span> response = <span class="text-purple-400">await</span> <span class="text-blue-400">fetch</span>(<span class="text-green-400">'https://api.com/data'</span>);
+    <span class="text-purple-400">const</span> data = <span class="text-purple-400">await</span> response.<span class="text-yellow-400">json</span>();
+    <span class="text-blue-400">console</span>.<span class="text-yellow-400">log</span>(data);
+  } <span class="text-purple-400">catch</span> (error) {
+    <span class="text-blue-400">console</span>.<span class="text-yellow-400">error</span>(error);
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Tip 2 -->
+                    <div class="border-l-4 border-green-500 pl-6">
+                        <h3 class="font-bold text-gray-800 mb-2">🔹 Mostrar loading mientras se carga</h3>
+                        <div class="bg-gray-900 text-white p-4 rounded-lg text-sm">
+                            <pre><code><span class="text-gray-400">// Antes del fetch</span>
+resultado.innerHTML = <span class="text-green-400">'Cargando...'</span>;
+
+<span class="text-gray-400">// Después del fetch</span>
+resultado.innerHTML = <span class="text-green-400">`Datos: <span class="text-yellow-300">${data}</span>`</span>;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Tip 3 -->
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h3 class="font-bold text-gray-800 mb-2">🔹 Acceder a datos anidados</h3>
+                        <div class="bg-gray-900 text-white p-4 rounded-lg text-sm">
+                            <pre><code><span class="text-gray-400">// Si la respuesta es: { results: [{ name: "Rick" }] }</span>
+<span class="text-purple-400">const</span> primerResultado = data.results[<span class="text-orange-400">0</span>];
+<span class="text-purple-400">const</span> nombre = primerResultado.name;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Tip 4 -->
+                    <div class="border-l-4 border-orange-500 pl-6">
+                        <h3 class="font-bold text-gray-800 mb-2">🔹 Usar API Keys en la URL</h3>
+                        <div class="bg-gray-900 text-white p-4 rounded-lg text-sm">
+                            <pre><code><span class="text-purple-400">const</span> API_KEY = <span class="text-green-400">'tu_api_key'</span>;
+<span class="text-purple-400">const</span> url = <span class="text-green-400">`https://api.com/data?api_key=<span class="text-yellow-300">${API_KEY}</span>&query=algo`</span>;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="max-w-4xl mx-auto">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="api.html" class="flex-1 px-6 py-4 bg-white border-2 border-cyan-600 text-cyan-600 font-bold rounded-lg text-center hover:bg-cyan-50 transition-colors">
+                    ← Volver al Tutorial
+                </a>
+                <a href="solved/ejercicio-api-solucion.html" class="flex-1 px-6 py-4 bg-cyan-600 text-white font-bold rounded-lg text-center hover:bg-cyan-700 transition-colors">
+                    Ver Solución ✅
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">Hecho con ❤️ para estudiantes | Tailwind CSS Playground</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/ejercicio-api.js"></script>
+
+</body>
+</html>

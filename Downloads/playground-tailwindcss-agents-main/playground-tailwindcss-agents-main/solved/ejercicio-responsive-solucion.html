@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es_CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Diseño Responsive - Tailwind CSS</title>
+    <link rel="stylesheet" href="./../assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="responsive.html" class="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="font-semibold">Volver a la guía</span>
+                </a>
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">
+                        ✓ Solución
+                    </span>
+                    <h1 class="text-xl font-bold text-gray-800">✏️ Ejercicio Resuelto</h1>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-2 bg-blue-500 bg-opacity-50 rounded-full text-sm font-semibold mb-4">
+                    ✓ Solución: Diseño Responsive
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Landing Page Responsive - Versión Completa</h1>
+                <p class="text-xl text-blue-100">
+                    Esta es la versión resuelta del ejercicio. Compara tu código con esta solución.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto mb-16">
+            <div class="p-8 md:p-12 lg:p-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                        Bienvenido a TechShop
+                    </h2>
+                    <p class="text-base md:text-lg lg:text-xl text-blue-100 mb-8">
+                        Los mejores productos tecnológicos al mejor precio. Envío gratis en compras sobre $50.000
+                    </p>
+                    <button class="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+                        Ver Productos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="max-w-6xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+                ¿Por qué elegirnos?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-2xl">🚚</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Envío Rápido</h3>
+                    <p class="text-gray-600">
+                        Entrega en 24-48 horas en toda la región metropolitana.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-2xl">✓</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Garantía Extendida</h3>
+                    <p class="text-gray-600">
+                        Todos nuestros productos tienen garantía de 2 años.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-2xl">💳</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pago Seguro</h3>
+                    <p class="text-gray-600">
+                        Acepta todas las tarjetas y medios de pago online.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="max-w-6xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+                Productos Destacados
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <!-- Product 1 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-5xl">
+                        💻
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Laptop Pro</h3>
+                        <p class="text-gray-600 text-sm mb-3">Intel i7, 16GB RAM</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-blue-600">$899.990</span>
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white text-5xl">
+                        📱
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Smartphone X</h3>
+                        <p class="text-gray-600 text-sm mb-3">6.5", 128GB, 5G</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-purple-600">$599.990</span>
+                            <button class="px-3 py-1 bg-purple-500 text-white rounded-lg text-sm hover:bg-purple-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white text-5xl">
+                        🎧
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Auriculares Pro</h3>
+                        <p class="text-gray-600 text-sm mb-3">Noise cancelling</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-green-600">$199.990</span>
+                            <button class="px-3 py-1 bg-green-500 text-white rounded-lg text-sm hover:bg-green-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white text-5xl">
+                        ⌚
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Smart Watch</h3>
+                        <p class="text-gray-600 text-sm mb-3">GPS, Waterproof</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-pink-600">$299.990</span>
+                            <button class="px-3 py-1 bg-pink-500 text-white rounded-lg text-sm hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="bg-gradient-to-r from-green-600 to-teal-600 p-8 rounded-2xl shadow-2xl text-white text-center">
+                <h2 class="text-3xl font-bold mb-4">
+                    Suscríbete a Nuestro Newsletter
+                </h2>
+                <p class="text-green-100 mb-6">
+                    Recibe ofertas exclusivas y novedades directamente en tu email
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-4 items-center max-w-xl mx-auto">
+                    <input 
+                        type="email" 
+                        placeholder="tu@email.com" 
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-800 w-full"
+                    />
+                    <button class="px-8 py-3 bg-white text-green-700 rounded-lg font-bold hover:bg-green-50 transition-colors shadow-lg w-full md:w-auto">
+                        Suscribirse
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="max-w-6xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+                    Nuestros Números
+                </h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+                            10K+
+                        </div>
+                        <p class="text-gray-600 mt-2">Clientes Felices</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">
+                            500+
+                        </div>
+                        <p class="text-gray-600 mt-2">Productos</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">
+                            24/7
+                        </div>
+                        <p class="text-gray-600 mt-2">Soporte</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-pink-600 mb-2">
+                            99%
+                        </div>
+                        <p class="text-gray-600 mt-2">Satisfacción</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">TechShop</h3>
+                    <p class="text-sm text-gray-400">
+                        Tu tienda de tecnología de confianza desde 2020.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Enlaces</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Inicio</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Productos</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Contacto</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>📧 info@techshop.cl</li>
+                        <li>📱 +56 9 1234 5678</li>
+                        <li>📍 Santiago, Chile</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>© 2025 TechShop. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
