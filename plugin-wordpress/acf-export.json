@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "title": "Mapa de Pueblos Indígenas",
+  "description": "Configuración de campos ACF para el bloque de mapa interactivo",
+  "showOnFront": false,
+  "fields": [
+    {
+      "key": "group_mapa_indigenas",
+      "title": "Configuración del Mapa de Pueblos Indígenas",
+      "fields": [
+        {
+          "key": "field_titulo_mapa",
+          "label": "Título del Mapa",
+          "name": "titulo_mapa",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Encabezado principal del mapa",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "Pueblos Indígenas de Chile",
+          "placeholder": "Título del mapa...",
+          "prepend": "",
+          "append": "",
+          "maxlength": ""
+        },
+        {
+          "key": "field_descripcion_general",
+          "label": "Descripción General",
+          "name": "descripcion_general",
+          "aria-label": "",
+          "type": "textarea",
+          "instructions": "Introducción sobre los pueblos indígenas representados",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": "Descripción introductoria...",
+          "maxlength": 1000,
+          "rows": 4,
+          "new_lines": "br"
+        },
+        {
+          "key": "field_pueblos_indigenas",
+          "label": "Pueblos Indígenas",
+          "name": "pueblos_indigenas",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "Añadir pueblos indígenas con sus ubicaciones y información",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "collapsed": "field_nombre_pueblo",
+          "min": 0,
+          "max": 0,
+          "layout": "block",
+          "button_label": "+ Añadir Pueblo",
+          "sub_fields": [
+            {
+              "key": "field_nombre_pueblo",
+              "label": "Nombre del Pueblo",
+              "name": "nombre_pueblo",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "Nombre del pueblo indígena",
+              "required": 1,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "placeholder": "Ej: Mapuche",
+              "prepend": "",
+              "append": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_latitud",
+              "label": "Latitud",
+              "name": "latitud",
+              "aria-label": "",
+              "type": "number",
+              "instructions": "Coordenada de latitud (ej: -33.4489)",
+              "required": 1,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "placeholder": "-33.4489",
+              "prepend": "",
+              "append": "",
+              "min": -90,
+              "max": 90,
+              "step": 0.0001
+            },
+            {
+              "key": "field_longitud",
+              "label": "Longitud",
+              "name": "longitud",
+              "aria-label": "",
+              "type": "number",
+              "instructions": "Coordenada de longitud (ej: -70.6693)",
+              "required": 1,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "placeholder": "-70.6693",
+              "prepend": "",
+              "append": "",
+              "min": -180,
+              "max": 180,
+              "step": 0.0001
+            },
+            {
+              "key": "field_region",
+              "label": "Región",
+              "name": "region",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "Región geográfica de Chile",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "placeholder": "Región Metropolitana",
+              "prepend": "",
+              "append": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_descripcion",
+              "label": "Descripción",
+              "name": "descripcion",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "Descripción breve del pueblo (máximo 500 caracteres)",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "placeholder": "Describir el pueblo...",
+              "maxlength": 500,
+              "rows": 3,
+              "new_lines": "br"
+            },
+            {
+              "key": "field_poblacion",
+              "label": "Población Aproximada",
+              "name": "poblacion_aproximada",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "Cantidad estimada de habitantes",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "placeholder": "1.400.000",
+              "prepend": "",
+              "append": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_imagen",
+              "label": "Imagen Representativa",
+              "name": "imagen",
+              "aria-label": "",
+              "type": "image",
+              "instructions": "Foto o imagen que represente el pueblo",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+              },
+              "return_format": "array",
+              "preview_size": "medium",
+              "library": "all",
+              "min_width": "",
+              "min_height": "",
+              "min_size": "",
+              "max_width": "",
+              "max_height": "",
+              "max_size": "",
+              "mime_types": ""
+            },
+            {
+              "key": "field_color_marcador",
+              "label": "Color del Marcador",
+              "name": "color_marcador",
+              "aria-label": "",
+              "type": "color_picker",
+              "instructions": "Seleccionar color distintivo para el marcador",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "#8b5a3c",
+              "enable_opacity": 0,
+              "return_format": "string"
+            }
+          ]
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "block",
+            "operator": "==",
+            "value": "acf/mapa-pueblos-indigenas"
+          }
+        ]
+      ],
+      "menu_order": 0,
+      "position": "normal",
+      "style": "default",
+      "label_placement": "top",
+      "instruction_placement": "label",
+      "hide_on_screen": [],
+      "active": true,
+      "description": "Configurar el mapa interactivo de pueblos indígenas de Chile"
+    }
+  ],
+  "import_date": "2024-12-09"
+}

@@ -1,0 +1,126 @@
+🚀 INICIO RÁPIDO - Mapa de Pueblos Indígenas de Chile
+
+═══════════════════════════════════════════════════════════════════
+
+📍 3 PUEBLOS IMPLEMENTADOS:
+
+1. MAPUCHE
+   • Ubicación: -38.7359, -72.5904 (La Araucanía)
+   • Población: 1.700.000
+   • Color: Café Tierra (#8B4513)
+
+2. RAPA NUI  
+   • Ubicación: -27.1127, -109.3497 (Isla de Pascua)
+   • Población: 8.000
+   • Color: Azul Océano (#4682B4)
+
+3. SELK'NAM
+   • Ubicación: -54.0833, -69.3000 (Tierra del Fuego)
+   • Población: Extinto (Patrimonio histórico)
+   • Color: Gris Austral (#708090)
+
+═══════════════════════════════════════════════════════════════════
+
+📂 ARCHIVOS PRINCIPALES:
+
+✅ index.html              - Abrir en navegador (DEMO LISTA)
+✅ mapa-indigenas.js       - Lógica del mapa
+✅ mapa-indigenas.css      - Estilos responsive
+✅ README.md               - Documentación completa
+✅ RESUMEN.md              - Cambios realizados
+✅ VERIFICACION.md         - Checklist de implementación
+
+═══════════════════════════════════════════════════════════════════
+
+🔧 PARA EMPEZAR AHORA:
+
+1. Abre "index.html" en tu navegador web
+2. Verás el mapa de Chile con 3 marcadores
+3. Haz click en cualquier marcador para ver información
+4. Haz click en los pueblos en la lista (derecha)
+5. Usa "Ver todos" para resetear la vista
+
+═══════════════════════════════════════════════════════════════════
+
+💻 PARA WORDPRESS:
+
+1. Copiar archivos a: wp-content/plugins/raiznativa-mapa/
+2. Activar plugin en: Plugins > Plugins Instalados
+3. Importar ACF desde: acf-export.json
+4. Crear página con bloque Gutenberg
+5. Rellenar datos en campos ACF
+
+Ver "INSTALL.md" para instrucciones detalladas.
+
+═══════════════════════════════════════════════════════════════════
+
+✨ CARACTERÍSTICAS:
+
+✅ Mapa interactivo con Leaflet.js
+✅ 3 pueblos con datos detallados
+✅ Responsive (mobile, tablet, desktop)
+✅ Popups con imágenes
+✅ Navegación por teclado
+✅ SEO optimizado
+✅ Accesible WCAG AA
+✅ Sin dependencias adicionales
+
+═══════════════════════════════════════════════════════════════════
+
+📊 MAPA MUESTRA:
+
+🗺️  Chile completo (zoom 4-5)
+📌 Mapuche en La Araucanía (centro-sur)
+📌 Rapa Nui en Isla de Pascua (océano pacífico)
+📌 Selk'nam en Tierra del Fuego (extremo sur)
+
+═══════════════════════════════════════════════════════════════════
+
+🎨 DISEÑO:
+
+Inspirado en mapas temáticos profesionales:
+- Paleta tierra/café
+- Bordes y sombreados
+- Tipografía clara
+- Colores distintivos por pueblo
+
+═══════════════════════════════════════════════════════════════════
+
+❓ PREGUNTAS FRECUENTES:
+
+P: ¿Cómo cambiar los pueblos?
+R: Edita el array "pueblosData" en index.html
+
+P: ¿Cómo personalizar colores?
+R: Modifica los valores "color_marcador" en los datos
+
+P: ¿Funciona en móvil?
+R: Sí, 100% responsive
+
+P: ¿Necesito instalar algo?
+R: No, todo se carga desde CDN
+
+P: ¿Puedo usar en WordPress?
+R: Sí, todos los archivos PHP están listos
+
+═══════════════════════════════════════════════════════════════════
+
+📞 DOCUMENTACIÓN:
+
+Lee los siguientes archivos según tu necesidad:
+
+- README.md       → Documentación técnica completa
+- INSTALL.md      → Pasos para instalar en WordPress  
+- CHANGELOG.md    → Historial de versiones
+- RESUMEN.md      → Resumen de cambios realizados
+- VERIFICACION.md → Checklist de implementación
+
+═══════════════════════════════════════════════════════════════════
+
+✅ ESTADO: LISTO PARA USAR
+
+Proyecto completado y verificado.
+Todos los archivos están en: 
+c:\Users\valen\OneDrive\Documentos\wordpress\
+
+═══════════════════════════════════════════════════════════════════
