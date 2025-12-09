@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapa interactivo de pueblos indígenas de Chile. Explora la ubicación, población y características de los pueblos originarios de Chile.">
+    <meta name="keywords" content="pueblos indígenas, chile, mapa interactivo, mapuche, aymará, rapa nui, atacameño">
+    <meta name="author" content="Raíz Nativa - Taller Digital UCHILE">
+    <meta property="og:title" content="Mapa de Pueblos Indígenas de Chile">
+    <meta property="og:description" content="Explora interactivamente los pueblos indígenas de Chile">
+    <meta property="og:type" content="website">
+    <title>Mapa de Pueblos Indígenas de Chile - Raíz Nativa</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="mapa-indigenas.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: #f5f1ed;
+            color: #4a3728;
+            line-height: 1.6;
+        }
+        
+        .wordpress-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .site-header {
+            background: linear-gradient(135deg, #5a4535 0%, #8b6f47 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .site-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .site-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header del sitio -->
+    <header class="site-header">
+        <div class="wordpress-container">
+            <h1>🌍 Pueblos Indígenas de Chile</h1>
+            <p>Mapuche, Rapa Nui y Selk'nam: Tres pueblos que definen la identidad cultural de Chile</p>
+        </div>
+    </header>
+    
+    <!-- Contenedor principal -->
+    <main class="wordpress-container">
+        <!-- Bloque: Mapa de Pueblos Indígenas -->
+        <section 
+            class="bloque-mapa-indigenas" 
+            id="mapa-block"
+            role="region" 
+            aria-label="Mapa interactivo de pueblos indígenas de Chile"
+            data-pueblos='[]'
+        >
+            <!-- Schema.org JSON-LD -->
+            <script type="application/ld+json" id="schema-mapa">
+            {
+                "@context": "https://schema.org",
+                "@type": "Map",
+                "name": "Pueblos Indígenas de Chile",
+                "description": "Mapa interactivo de pueblos indígenas de Chile",
+                "mapType": "VenueMap"
+            }
+            </script>
+
+            <div class="mapa-container">
+                <!-- Header -->
+                <header class="mapa-header">
+                    <h2 class="mapa-titulo">Pueblos Indígenas de Chile</h2>
+                    <p class="mapa-descripcion">
+                        Explora los tres pueblos indígenas más significativos de Chile. Haz clic en los marcadores para descubrir información detallada sobre su ubicación geográfica, población actual, historia y legado cultural.
+                    </p>
+                </header>
+                
+                <!-- Contenido principal -->
+                <div class="mapa-contenido">
+                    <!-- Mapa Leaflet -->
+                    <div 
+                        id="mapa-interactivo" 
+                        class="mapa-canvas" 
+                        role="application" 
+                        aria-label="Mapa interactivo con marcadores de pueblos indígenas"
+                    ></div>
+                    
+                    <!-- Lista de pueblos -->
+                    <aside class="pueblos-lista" aria-label="Lista de pueblos indígenas">
+                        <div class="lista-header">
+                            <h3>Pueblos Indígenas</h3>
+                            <button 
+                                class="btn-reset-mapa" 
+                                aria-label="Restablecer vista del mapa para ver todos los pueblos"
+                                type="button"
+                            >
+                                <span class="btn-text">Ver todos</span>
+                            </button>
+                        </div>
+                        
+                        <div class="lista-scroll">
+                            <ul class="pueblos-items" id="pueblos-list">
+                                <!-- Se llenará con JavaScript -->
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="mapa-indigenas.js"></script>
+    
+    <!-- Datos de prueba y inicialización -->
+    <script>
+        // Datos de 3 pueblos indígenas: Mapuche, Rapa Nui, Selk'nam
+        const pueblosData = [
+            {
+                id: 1,
+                nombre_pueblo: "MAPUCHE",
+                latitud: -38.7359,
+                longitud: -72.5904,
+                region: "La Araucanía (Centro-Sur de Chile)",
+                descripcion: "Pueblo más numeroso de Chile con aproximadamente 1.7 millones de habitantes. Territorio histórico que se extiende desde el río Itata hasta Chiloé. Poseen un rico patrimonio cultural y el idioma mapudungun sigue siendo hablado por miles de personas. Conocidos por su resistencia histórica y contribuciones a la identidad nacional.",
+                poblacion_aproximada: "1.700.000",
+                imagen: "https://images.unsplash.com/photo-1470484169555-40577c3d5cf1?w=400&h=300&fit=crop",
+                imagen_alt: "Textiles tradicionales Mapuche",
+                color_marcador: "#8B4513"
+            },
+            {
+                id: 2,
+                nombre_pueblo: "RAPA NUI",
+                latitud: -27.1127,
+                longitud: -109.3497,
+                region: "Isla de Pascua (Océano Pacífico)",
+                descripcion: "Pueblo polinesio de Isla de Pascua con aproximadamente 8,000 habitantes actuales. Ubicada a 3,700 km de la costa continental, es famosa mundialmente por los moáis y su cultura ancestral única. Mantiene tradiciones ancestrales y una identidad cultural distintiva. Patrimonio UNESCO de la humanidad.",
+                poblacion_aproximada: "8.000",
+                imagen: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=300&fit=crop",
+                imagen_alt: "Moáis de Isla de Pascua",
+                color_marcador: "#4682B4"
+            },
+            {
+                id: 3,
+                nombre_pueblo: "SELK'NAM",
+                latitud: -54.0833,
+                longitud: -69.3000,
+                region: "Tierra del Fuego, Magallanes (Extremo Sur)",
+                descripcion: "Pueblo cazador-recolector nómada que habitaba Tierra del Fuego hasta el siglo XX. Desafortunadamente, su población se extinguió como resultado del genocidio durante la época de colonización. Su legado histórico y cultural es preservado en la memoria colectiva de Chile como testimonio de una cultura ancestral única.",
+                poblacion_aproximada: "Extinto (Patrimonio histórico)",
+                imagen: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+                imagen_alt: "Paisaje de Tierra del Fuego",
+                color_marcador: "#708090"
+            }
+        ];
+        
+        // Inicializar el mapa cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapaBlock = document.getElementById('mapa-block');
+            mapaBlock.setAttribute('data-pueblos', JSON.stringify(pueblosData));
+            
+            // Inicializar el mapa
+            if (window.MapaIndigenasBlock) {
+                window.MapaIndigenasBlock.init(mapaBlock);
+            }
+        });
+    </script>
+</body>
+</html>

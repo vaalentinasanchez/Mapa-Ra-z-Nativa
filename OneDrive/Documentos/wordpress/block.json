@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "raiznativa/mapa-pueblos-indigenas",
+  "title": "Mapa de Pueblos Indígenas",
+  "description": "Mapa interactivo de pueblos indígenas de Chile con información detallada",
+  "category": "formatting",
+  "icon": "location-alt",
+  "keywords": ["mapa", "indígenas", "chile", "pueblos", "interactivo"],
+  "version": "1.0.0",
+  "textDomain": "raiznativa",
+  "attributes": {
+    "data-pueblos": {
+      "type": "string",
+      "default": "[]"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "fullHeight": false,
+    "color": {
+      "background": false,
+      "text": false,
+      "gradients": false
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "script": "file:./view.js"
+}
